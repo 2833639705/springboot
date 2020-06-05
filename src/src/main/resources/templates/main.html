@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:shiro="http://www.pollix.at/thymeleaf/shiro"><!-- 引入shiro的命名空间 -->
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<p shiro:hasRole="admin">admin能看到的</p>
+<p shiro:hasRole="student">student能看到的</p>
+</body>
+</html>

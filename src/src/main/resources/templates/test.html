@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"> <!-- 引入thymeleaf命名空间 -->
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<!-- 内联 -->
+<script type="text/javascript" th:inline="javascript">
+    console.log([[${name}]])
+</script>
+<body>
+姓名:<label th:text="${name}"></label><br>
+性别:<label th:text="${gender}">男</label><br>
+<!-- 内联方式 -->
+年龄:<label>[[${age}]]</label><br>
+<!-- th:if : 条件成立时 -->
+<!-- th:unless : 条件不成立时 -->
+<label th:if="${isBoy}">OK</label><br>
+<label th:unless="${isBoy}">NO</label><br>
+<label th:if="${nickname=='小强'}">smallQiang</label><br>
+<label th:unless="${nickname=='小强'}">NOQiang</label><br>
+
+<table>
+    <tr th:each="user : ${users}">
+        <td th:text="${user.uid}"></td>
+        <td th:text="${user.uname}"></td>
+        <td th:text="${user.pwd}"></td>
+        <td><a th:href="@{http://localhost:8080/del(uid=${user.uid})}">删除</a></td>
+        <td><a th:href="@{/book/{uid}/update(uid=${user.uid})}">更新图书</a></td>
+    </tr>
+</table>

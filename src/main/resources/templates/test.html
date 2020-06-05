@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"> <!-- 引入thymeleaf命名空间 -->
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+姓名:<label th:text="${name}">默认值</label><br>
+性别:<label th:text="${gender}">男</label><br>
+<!-- 内联方式 -->
+年龄:<label>[[${age}}]]</label><br>
+</body>
+</html>
